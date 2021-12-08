@@ -1,4 +1,4 @@
-const Calculator = () => {
+ const Calculator = () => {
     return (
         <div className="container">
             <div className="calculator">
