@@ -1,7 +1,0 @@
-const Enhance = (Component) => {
-    return ({admin}) => admin?<Component/>:"Private"
-     
-        
-    
-}
-export default Enhance;

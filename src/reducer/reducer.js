@@ -1,12 +1,15 @@
-const initState = [
+/* const initState = [
     { password : 'something'},
     {password : 'password'},
-    {password : 'nothing'}
-]
-const reducer = (state=initState, action) => {
-    switch(action.type) {
-        case 'ADD_DATA':
-            return [...state,action.payload]
+    {password : 'nothing'} */
+
+const reducer = (state={}, action) => {
+    const {type,payload} = action
+    switch(type) {
+       case 'DELETE_ITEM':
+           return state.filter(item => item.id !== payload)
+       case "ADD_ITEM":
+           return [...state,payload]
         default:
             return state
     }
