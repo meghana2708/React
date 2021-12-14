@@ -7,30 +7,37 @@ import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducer/reducer';
 import {composeWithDevTools} from 'redux-devtools-extension'
-import List from './components/List';
-import AddItem from './components/AddItem';
-<AddItem />
-const chores = [
+
+import { BrowserRouter } from 'react-router-dom';
+
+
+const products = [
   {
     id : 1,
-    text: 'Go to Gym'
+    text: 'iPhone11',
+    description:'This is iPhone 11'
   },
   {
     id: 2,
-    text:'Eat food'},
+    text:'iPhone12',
+    description:'This is iPhone 12' 
+  },
  { 
    id: 3,
-  text :'Sleep'}
+  text :'iPhone13',
+  description:'this is iPhone 13'
+}
 ]
 
-const store = createStore(reducer,chores,composeWithDevTools())
+const store = createStore(reducer,products,composeWithDevTools())
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    
+    <BrowserRouter >
     <App />
-    <List />
+    </BrowserRouter>
+    
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
